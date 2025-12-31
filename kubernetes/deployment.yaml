@@ -5,7 +5,7 @@ metadata:
   labels:
     app: tic-tac-toe
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: tic-tac-toe
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tic-tac-toe
-        image: docker.io/bader1937/tic-tac-game:sha-a8f563d2e7d223d37b216d87b9a17ccfc8c0955c
+        image: docker.io/bader1937/tic-tac-game:v1.0.0
         # Image will be automatically updated by CI/CD pipeline 
     
         # Image will be automatically updated by CI/CD pipeline hhhhh
