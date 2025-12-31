@@ -1,4 +1,4 @@
-replicaCount: 4
+replicaCount: 7
 
 image:
   repository: docker.io/bader1937/tic-tac-game

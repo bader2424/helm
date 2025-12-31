@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tic-tac
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/bader2424/tic-tac-game.git
+    targetRevision: helm          # 👈 branch name
+    path: helm/tic-tac-chart      # 👈 your chart path
+
+    helm:
+      valueFiles:
+        - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tic-tac
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
