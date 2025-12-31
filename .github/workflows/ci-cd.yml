@@ -142,6 +142,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add helm/tic-tac/values.yaml
+          git add helm/tic-tac-chart/values.yaml
           git commit -m "helm: update image to sha-${{ github.sha }}" || echo "No changes"
           git push
