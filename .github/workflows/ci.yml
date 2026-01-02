@@ -2,11 +2,11 @@ name: CI/CD Pipeline (DevSecOps-enabled)
 
 on:
   push:
-    branches: ["*"]
+    branches: ["helm"]
     paths-ignore:
       - 'kubernetes/deployment.yaml'
   pull_request:
-    branches: ["*"]
+    branches: ["helm"]
 
 permissions:
   contents: write   # Required for GitOps updates
