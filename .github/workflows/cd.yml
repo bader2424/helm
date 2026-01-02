@@ -3,7 +3,7 @@ name: CD Pipeline (GitOps)
 on:
   push:
     branches:
-      - "helm"
+      - "master"
     paths:
       - 'helm/**'   # only trigger CD when helm chart changes
 

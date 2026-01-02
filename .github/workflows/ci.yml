@@ -2,11 +2,11 @@ name: CI/CD Pipeline (DevSecOps-enabled)
 
 on:
   push:
-    branches: ["helm"]
+    branches: ["master"]
     paths-ignore:
       - 'kubernetes/deployment.yaml'
   pull_request:
-    branches: ["helm"]
+    branches: ["master"]
 
 permissions:
   contents: write   # Required for GitOps updates
@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: 
-          ref: helm
+          ref: master
       - uses: actions/setup-node@v4
         with:
           node-version: '20' 
@@ -59,7 +59,7 @@ jobs:
             -Dsonar.sources=. \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN \
-            -Dsonar.branch.name=helm
+            -Dsonar.branch.name=master
 
   dependency-scan:
     name: Dependency Vulnerability Scan
