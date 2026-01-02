@@ -54,7 +54,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner \
-            -Dsonar.projectKey=bader2424 \
+            -Dsonar.projectKey=bader2424_helm \
             -Dsonar.organization=bader2424 \
             -Dsonar.sources=. \
             -Dsonar.host.url=https://sonarcloud.io \
