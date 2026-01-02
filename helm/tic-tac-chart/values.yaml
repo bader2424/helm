@@ -2,7 +2,7 @@ replicaCount: 5
 
 image:
   repository: docker.io/bader1937/tic-tac-game
-  tag: sha-f13abe21d6e9a68c714daa01623b2eabaab497d0
+  tag: sha-9b2d5dade039b52c26426904635769419f6c797c
   pullPolicy: Always
 
 service:
@@ -23,15 +23,13 @@ serviceAccount:
 containerPort: 80
 
 livenessProbe:
-  httpGet:
-    path: /
-    port: 80
-  initialDelaySeconds: 15
+  path: /
+  port: 80
+  initialDelaySeconds: 10
   periodSeconds: 10
 
 readinessProbe:
-  httpGet:
-    path: /
-    port: 80
+  path: /
+  port: 80
   initialDelaySeconds: 5
   periodSeconds: 5
